@@ -1,0 +1,12 @@
+.create-kitten {
+    border-width: 1px;
+    border-style: groove;
+    width:20%;
+}
+
+.kitten-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: var(--spacing);
+}
