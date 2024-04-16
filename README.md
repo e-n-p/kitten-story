@@ -1,27 +1,53 @@
-# KittenSite
+quete 9 events / Les interactions utilisateur
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+Prepare the package for the quest
 
-## Development server
+So, since you already know how to build an app, create routes and, on top of that, the cherry on top, create forms, we'll be able to have a little fun!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+We are going to create a fairly simple application, with:
 
-## Code scaffolding
+     A root app component
+     An app-create-kitten component
+     An app-list-kitten component
+     An app-user-kitten component
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Display level, we will just have:
 
-## Build
+     A list of kittens, with the image displayed (listKitten)
+     A form to add a kitten (createKitten)
+     A bar on the side, which references my kittens, 
+     just me (userKitten), with the image only
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Challenge
+give me kittens
 
-## Running unit tests
+The pitch is simple, on kitten-story, users can:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+     Create kittens, via the form, with a name, a breed, a date of birth, a link to an image for the photo (kittens are added to the overall collection, when they are created); the 4 pieces of information are mandatory.
+     Adopt a kitten, via an adopt button. When a kitten is adopted, it is added to the right panel and removed from the list.
 
-## Running end-to-end tests
+Since this app is a POC, there is no need to do data retention. So, even if when you refresh it disappears, it doesn't matter.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+There are still several elements to take into account:
 
-## Further help
+     The submit action of the form that adds the kitten to the collection
+     The adopt action that removes the kitten from the global collection and places it in the user's collection
+     The form button that should change color to show that the form is valid
+     When I hover over a kitten, its information should be displayed elegantly
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+We do not provide a design, because we assume that creativity must be expressed at this level of the game ;)
+Validation criteria
+
+     When I add a kitten, it is displayed in the list of available kittens.
+     When I hover my mouse over a kitten, the information is displayed.
+     When I click on the adoption of a kitten, I adopt it, it is in my list, it is no longer in the list of available kittens.
+     The form tells me if I have completed everything correctly and I cannot add a kitten if the form is invalid.
+
+Even better
+
+     The design is cool
+     The code is commented
+     The code is clean, respects the StyleGuide
+
+
+

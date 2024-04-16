@@ -1,1 +1,25 @@
-<p>app-create-kitten</p>
+<div class="create-kitten">
+    <form class="kitten-form" [formGroup]="createKittenForm" #createKitten="ngForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name: </label>
+            <input name="name" type="text" formControlName="name">
+        </div>
+
+        <div>
+            <label for="breed">Breed: </label>
+            <input name="breed" type="text" formControlName="breed">
+        </div>
+        
+        <div>
+            <label for="dob">Date of birth: </label>
+            <input name="dob" type="date" formControlName="dob">
+        </div>
+
+        <div>
+            <label for="image">Picture: </label>
+            <input name="image" type="text" formControlName="image">
+        </div>
+
+        <button class="standard-button" type="submit">Create!</button>
+    </form>
+</div>
