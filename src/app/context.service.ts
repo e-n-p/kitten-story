@@ -6,9 +6,12 @@ import { Kitten } from './models/types/kitten';
   providedIn: 'root'
 })
 export class ContextService {
-
   private kittenDB = new BehaviorSubject<Array<Kitten>>([]);
-  data$ = this.kittenDB.asObservable();
+  dataGallery$ = this.kittenDB.asObservable();
+
+  private adoptedDB = new BehaviorSubject<Array<Kitten>>([]);
+  dataAdopted$ = this.adoptedDB.asObservable();
+
 
   constructor() { }
 
@@ -21,5 +24,24 @@ export class ContextService {
     const newArr = [...currentArr, newKitten];
     this.kittenDB.next(newArr);
   }
+
+  getAdoptedDB(): Array<Kitten>{
+    return this.adoptedDB.value;
+  }
+
+  addToAdoptedDB(newKitten: Kitten): void {
+    const currentArr = this.getAdoptedDB();
+    const newArr = [...currentArr, newKitten];
+    this.adoptedDB.next(newArr);
+  }
+
+  removeFromGallery(kittenToRemove: Kitten) {
+    const result = this.getKittenDB().filter((kitten) => {
+        kitten.name !== kittenToRemove.name;
+    });
+    const newArr = [...result];
+    this.kittenDB.next(newArr);
+  }
+
 
 }

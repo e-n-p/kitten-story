@@ -1,1 +1,14 @@
-<p>app-user-kitten</p>
+<h4>All your adopted kittens!</h4>
+
+<div *ngIf="adoptedGallery.length ; else noKittenTemplate " class="gallery-container">
+    <div class="cat-card" *ngFor="let kitten of adoptedGallery">
+        <h4>{{kitten.name}}</h4>
+        <p class="detail">{{kitten.breed}}</p>
+        <p class="detail">{{kitten.dob}}</p>
+        <img class="cat-pic" src="{{kitten.image}}">
+    </div>
+</div>
+
+<ng-template #noKittenTemplate>
+    <h4>You haven't adopted any kittens yet! :(</h4>
+</ng-template>

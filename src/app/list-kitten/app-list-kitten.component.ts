@@ -10,14 +10,20 @@ import { Kitten } from '../models/types/kitten';
 export class ListKittenComponent implements OnInit{
   kittenGallery:Array<Kitten> = [];
 
-  constructor(public context: ContextService){}
+  constructor(private context: ContextService){}
 
   ngOnInit(): void {
-    // this.kittenGallery = this.context.getKittenDB();
-
-    this.context.data$.subscribe(data => {
-      console.log('Data updated:', data);
+    this.context.dataGallery$.subscribe(data => {
+      console.log('Gallery data updated:', data);
       this.kittenGallery = data;
     });
   }
+
+  adoptKitten(newKitten: Kitten): void{
+    console.log("adopt pressed");
+    this.context.removeFromGallery(newKitten);
+    console.log("kitten 'removed'");
+    this.context.addToAdoptedDB(newKitten);
+  }
+
 }

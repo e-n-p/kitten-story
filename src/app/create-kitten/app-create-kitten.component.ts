@@ -21,7 +21,6 @@ export class CreateKittenComponent {
     }
 
   onSubmit(): void{
-    console.log(this.createKittenForm.value);
     const newKitten : Kitten = {
       name: this.createKittenForm.value.name,
       breed: this.createKittenForm.value.breed,

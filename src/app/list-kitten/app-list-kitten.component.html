@@ -1,9 +1,19 @@
+<h4>Kittens available for adoption</h4>
 
-<!-- <div class="gallery" *ngIf="(context.data$ | async) as kittenGallery"> -->
-    <div class="gallery-card" *ngFor="let kitten of kittenGallery">
+<div *ngIf="kittenGallery.length ; else noKittenTemplate" class="gallery-container">
+    <div class="cat-card" *ngFor="let kitten of kittenGallery">
         <h4>{{kitten.name}}</h4>
-        <p>{{kitten.breed}}</p>
-        <p>{{kitten.dob}}</p>
-        <img src="{{kitten.image}}">
+        <p class="detail">{{kitten.breed}}</p>
+        <p class="detail">{{kitten.dob}}</p>
+        <img class="cat-pic" src="{{kitten.image}}">
+        <button (click)="adoptKitten(kitten)">Adopt {{kitten.name}}</button>
     </div>
-<!-- </div> -->
+</div>
+
+<ng-template #noKittenTemplate>
+    <h4>There are no kittens available right meow :(</h4>
+</ng-template>
+
+<app-create-kitten></app-create-kitten>
+
+<app-user-kitten></app-user-kitten>
