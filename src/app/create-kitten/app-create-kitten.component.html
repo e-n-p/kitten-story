@@ -20,7 +20,7 @@
             <input name="image" type="text" formControlName="image" required>
         </div>
 
-        <div *ngIf="createKitten.invalid">
+        <div *ngIf="createKitten.invalid && createKitten.dirty">
             <span class="error">This form is not valid and cannot be submitted!</span>
         </div>
 

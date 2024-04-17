@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { CreateKittenComponent } from './create-kitten/app-create-kitten.component';
 import { ListKittenComponent } from './list-kitten/app-list-kitten.component';
 import { UserKittenComponent } from './user-kitten/app-user-kitten.component';
+import { CatCardComponent } from './cat-card/cat-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateKittenComponent,
     ListKittenComponent,
-    UserKittenComponent
+    UserKittenComponent,
+    CatCardComponent
   ],
   imports: [
     BrowserModule,

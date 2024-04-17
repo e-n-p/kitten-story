@@ -2,10 +2,7 @@
 
 <div *ngIf="kittenGallery.length ; else noKittenTemplate" class="gallery-container">
     <div class="cat-card" *ngFor="let kitten of kittenGallery">
-        <h4>{{kitten.name}}</h4>
-        <p class="detail">{{kitten.breed}}</p>
-        <p class="detail">{{kitten.dob}}</p>
-        <img class="cat-pic" src="{{kitten.image}}">
+        <app-cat-card [singleCat]="kitten"></app-cat-card>
         <button class="standard-button" (click)="adoptKitten(kitten)">Adopt {{kitten.name}}</button>
     </div>
 </div>
