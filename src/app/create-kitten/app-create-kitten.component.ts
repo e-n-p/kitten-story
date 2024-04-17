@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { ContextService } from '../context.service';
+import { Kitten } from '../models/types/kitten';
 
 @Component({
   selector: 'app-create-kitten',
@@ -9,16 +11,23 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class CreateKittenComponent {
     createKittenForm!:FormGroup;
 
-    constructor(private formBuilder: FormBuilder){
+    constructor(private formBuilder: FormBuilder, private context: ContextService){
       this.createKittenForm = this.formBuilder.group({
         name: [''],
         breed: [''],
         dob: [''],
         image: ['']
-      })
-  }
+      });
+    }
 
   onSubmit(): void{
     console.log(this.createKittenForm.value);
+    const newKitten : Kitten = {
+      name: this.createKittenForm.value.name,
+      breed: this.createKittenForm.value.breed,
+      dob: this.createKittenForm.value.dob,
+      image: this.createKittenForm.value.image
+    };
+    this.context.addKittenToDB(newKitten);
   }
 }

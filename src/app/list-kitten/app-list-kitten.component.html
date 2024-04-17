@@ -1,1 +1,9 @@
-<p>app-list-kitten</p>
+
+<!-- <div class="gallery" *ngIf="(context.data$ | async) as kittenGallery"> -->
+    <div class="gallery-card" *ngFor="let kitten of kittenGallery">
+        <h4>{{kitten.name}}</h4>
+        <p>{{kitten.breed}}</p>
+        <p>{{kitten.dob}}</p>
+        <img src="{{kitten.image}}">
+    </div>
+<!-- </div> -->

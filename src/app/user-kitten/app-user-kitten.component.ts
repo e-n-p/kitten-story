@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Kitten } from '../models/types/kitten';
 
 @Component({
   selector: 'app-user-kitten',
@@ -8,6 +7,4 @@ import { Kitten } from '../models/types/kitten';
 })
 export class UserKittenComponent {
 
-    kittenDB:Array<Kitten> = [];
-    
 }
