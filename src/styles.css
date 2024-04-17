@@ -47,6 +47,12 @@
 
 .detail{
     display: none;
+    margin: 0px;
+}
+
+.error {
+    color: orangered;
+    font-style: italic;
 }
 
 .cat-pic{

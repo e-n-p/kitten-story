@@ -1,25 +1,33 @@
 <div class="create-kitten">
-    <form class="kitten-form" [formGroup]="createKittenForm" #createKitten="ngForm" (ngSubmit)="onSubmit()">
+    <form class="kitten-form" [formGroup]="createKittenForm" #createKitten="ngForm" (ngSubmit)="createKitten.valid && onSubmit()">
         <div>
             <label for="name">Name: </label>
-            <input name="name" type="text" formControlName="name">
+            <input name="name" type="text" formControlName="name" required>
         </div>
 
         <div>
             <label for="breed">Breed: </label>
-            <input name="breed" type="text" formControlName="breed">
+            <input name="breed" type="text" formControlName="breed" required>
         </div>
         
         <div>
             <label for="dob">Date of birth: </label>
-            <input name="dob" type="date" formControlName="dob">
+            <input name="dob" type="date" formControlName="dob" required>
         </div>
 
         <div>
             <label for="image">Picture: </label>
-            <input name="image" type="text" formControlName="image">
+            <input name="image" type="text" formControlName="image" required>
         </div>
 
-        <button class="standard-button" type="submit">Create!</button>
+        <div *ngIf="createKitten.invalid">
+            <span class="error">This form is not valid and cannot be submitted!</span>
+        </div>
+
+        <button 
+            class="standard-button" 
+            [ngClass]="{'feedback-button-invalid': createKitten.invalid, 'feedback-button-valid': createKitten.valid}"
+            type="submit">Create!
+        </button>
     </form>
 </div>

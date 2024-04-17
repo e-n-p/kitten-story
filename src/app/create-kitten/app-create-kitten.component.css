@@ -10,3 +10,11 @@
     gap: 0.5rem;
     padding: var(--spacing);
 }
+
+.feedback-button-invalid {
+    background-color: rgb(234, 71, 12);
+}
+
+.feedback-button-valid {
+    background-color: aquamarine;
+}
