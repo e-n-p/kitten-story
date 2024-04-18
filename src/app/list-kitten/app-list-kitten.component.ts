@@ -19,11 +19,4 @@ export class ListKittenComponent implements OnInit{
     });
   }
 
-  adoptKitten(newKitten: Kitten): void{
-    console.log("adopt pressed");
-    this.context.removeFromGallery(newKitten);
-    console.log("kitten 'removed'");
-    this.context.addToAdoptedDB(newKitten);
-  }
-
 }

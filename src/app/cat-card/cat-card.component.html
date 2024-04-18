@@ -1,5 +1,12 @@
-
-<h4>{{singleCat.name}}</h4>
-<p class="detail">{{singleCat.breed}}</p>
-<p class="detail">{{singleCat.dob}}</p>
-<img class="standard-button" class="cat-pic" src="{{singleCat.image}}">
+<div class="cat-card">
+    <h4>{{singleCat.name}}</h4>
+    <p class="detail">{{singleCat.breed}}</p>
+    <p class="detail">{{singleCat.dob}}</p>
+    <img class="cat-pic" src="{{singleCat.image}}">
+    <button 
+        *ngIf="this.adoptButton" 
+        class="standard-button" 
+        (click)="adoptKitten(singleCat)">
+        Adopt {{singleCat.name}}
+    </button>
+</div>

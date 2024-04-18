@@ -1,10 +1,11 @@
 <h4>Kittens available for adoption</h4>
 
 <div *ngIf="kittenGallery.length ; else noKittenTemplate" class="gallery-container">
-    <div class="cat-card" *ngFor="let kitten of kittenGallery">
-        <app-cat-card [singleCat]="kitten"></app-cat-card>
-        <button class="standard-button" (click)="adoptKitten(kitten)">Adopt {{kitten.name}}</button>
-    </div>
+        <app-cat-card 
+            *ngFor="let kitten of kittenGallery"
+            [singleCat]="kitten"
+            [adoptButton]="true">
+        </app-cat-card>
 </div>
 
 <ng-template #noKittenTemplate>

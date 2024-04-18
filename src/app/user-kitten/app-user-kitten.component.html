@@ -1,9 +1,12 @@
 <h4>All your adopted kittens!</h4>
 
-<div *ngIf="adoptedGallery.length ; else noKittenTemplate " class="gallery-container">
-    <div class="cat-card" *ngFor="let kitten of adoptedGallery">
-        <app-cat-card [singleCat]="kitten"></app-cat-card>
-    </div>
+<div *ngIf="adoptedGallery.length ; else noKittenTemplate" class="gallery-container">
+    <!-- <div class="cat-card" *ngFor="let kitten of adoptedGallery"> -->
+    <app-cat-card 
+        *ngFor="let kitten of adoptedGallery" 
+        [singleCat]="kitten">
+    </app-cat-card>
+    <!-- </div> -->
 </div>
 
 <ng-template #noKittenTemplate>
