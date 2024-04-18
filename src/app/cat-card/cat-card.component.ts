@@ -14,7 +14,7 @@ export class CatCardComponent {
     breed: '',
     dob: new Date(),
     image: ''
-  }
+  };
   @Input()
   adoptButton: boolean = false;
 

@@ -8,8 +8,19 @@
     --spacing: 8px;
 }
 
+body {
+    background-color: rgb(244, 202, 209);
+}
+
 .standard-button {
     width: calc(var(--spacing)* 8);
+}
+
+.embossed {
+    font-weight: bold;
+    font-style: italic;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
 }
 
 .gallery-container {
@@ -23,9 +34,4 @@
 
     gap: 1rem;
     margin:2rem;
-}
-
-.error {
-    color: orangered;
-    font-style: italic;
 }

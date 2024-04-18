@@ -1,7 +1,7 @@
 <div class="cat-card">
-    <h4>{{singleCat.name}}</h4>
-    <p class="detail">{{singleCat.breed}}</p>
-    <p class="detail">{{singleCat.dob}}</p>
+    <p class="embossed">{{singleCat.name}}</p>
+    <p class="detail">Breed: {{singleCat.breed}}</p>
+    <p class="detail">Date of birth: {{singleCat.dob}}</p>
     <img class="cat-pic" src="{{singleCat.image}}">
     <button 
         *ngIf="this.adoptButton" 

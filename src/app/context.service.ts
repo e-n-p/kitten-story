@@ -35,12 +35,16 @@ export class ContextService {
     this.adoptedDB.next(newArr);
   }
 
-  removeFromGallery(kittenToRemove: Kitten) {
-    const result = this.getKittenDB().filter((kitten) => {
-        kitten.name !== kittenToRemove.name;
+  removeFromGallery(kittenToRemove: Kitten): void {
+    const gallery = this.getKittenDB();
+    console.log("before filter " + gallery);
+    const result = gallery.filter((kitten) => {
+        kitten.name !== kittenToRemove.name
     });
+    console.log("result of filter " + result);
     const newArr = [...result];
     this.kittenDB.next(newArr);
+    console.log(this.getKittenDB());
   }
 
 

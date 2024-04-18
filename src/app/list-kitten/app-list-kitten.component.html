@@ -1,17 +1,21 @@
-<h4>Kittens available for adoption</h4>
 
-<div *ngIf="kittenGallery.length ; else noKittenTemplate" class="gallery-container">
-        <app-cat-card 
-            *ngFor="let kitten of kittenGallery"
-            [singleCat]="kitten"
-            [adoptButton]="true">
-        </app-cat-card>
+<div class="grid-container">
+
+    <app-create-kitten class="left-column"></app-create-kitten>
+
+    <div class="top-row">
+        <h2>Kittens available for adoption</h2>
+        <div *ngIf="kittenGallery.length ; else noKittenTemplate" class="gallery-container">
+                <app-cat-card 
+                    *ngFor="let kitten of kittenGallery"
+                    [singleCat]="kitten"
+                    [adoptButton]="true">
+                </app-cat-card>
+        </div>
+        <ng-template #noKittenTemplate>
+            <h4>There are no kittens available right meow :(</h4>
+        </ng-template>
+    </div>
+
+    <app-user-kitten class="bottom-row"></app-user-kitten>
 </div>
-
-<ng-template #noKittenTemplate>
-    <h4>There are no kittens available right meow :(</h4>
-</ng-template>
-
-<app-create-kitten></app-create-kitten>
-
-<app-user-kitten></app-user-kitten>

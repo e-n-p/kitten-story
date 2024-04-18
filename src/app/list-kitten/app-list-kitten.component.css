@@ -1,0 +1,29 @@
+.grid-container {
+    width: 90%;
+    margin: calc(var(--spacing)* 8);
+
+    display: inline-grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: 1fr 1fr;
+
+    background-color: pink;
+}
+
+.left-column {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.top-row {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.bottom-row {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}

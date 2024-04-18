@@ -1,7 +1,9 @@
 .create-kitten {
     border-width: 1px;
     border-style: groove;
-    width:20%;
+    width:90%;
+    margin: var(--spacing);
+    background-color: rgb(243, 243, 83);
 }
 
 .kitten-form {
@@ -17,4 +19,9 @@
 
 .feedback-button-valid {
     background-color: aquamarine;
+}
+
+.error {
+    color: orangered;
+    font-style: italic;
 }
