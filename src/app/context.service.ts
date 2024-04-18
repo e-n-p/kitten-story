@@ -15,14 +15,16 @@ export class ContextService {
 
   constructor() { }
 
+  createNewArray(array:Array<Kitten>, newKitten:Kitten): Array<Kitten> {
+    return [...array, newKitten];
+  }
+
   getKittenDB(): Array<Kitten>{
     return this.kittenDB.value;
   }
 
   addKittenToDB(newKitten: Kitten): void {
-    const currentArr = this.getKittenDB();
-    const newArr = [...currentArr, newKitten];
-    this.kittenDB.next(newArr);
+    this.kittenDB.next(this.createNewArray(this.getKittenDB(), newKitten));
   }
 
   getAdoptedDB(): Array<Kitten>{
@@ -30,22 +32,15 @@ export class ContextService {
   }
 
   addToAdoptedDB(newKitten: Kitten): void {
-    const currentArr = this.getAdoptedDB();
-    const newArr = [...currentArr, newKitten];
-    this.adoptedDB.next(newArr);
+    this.adoptedDB.next(this.createNewArray(this.getAdoptedDB(), newKitten));
   }
 
   removeFromGallery(kittenToRemove: Kitten): void {
-    const gallery = this.getKittenDB();
-    console.log("before filter " + gallery);
-    const result = gallery.filter((kitten) => {
-        kitten.name !== kittenToRemove.name
+    const result = this.getKittenDB().filter((kitten: Kitten) => {
+        return kitten.name !== kittenToRemove.name
     });
-    console.log("result of filter " + result);
     const newArr = [...result];
     this.kittenDB.next(newArr);
     console.log(this.getKittenDB());
   }
-
-
 }
